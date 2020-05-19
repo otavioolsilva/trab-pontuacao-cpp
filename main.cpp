@@ -10,7 +10,7 @@ int main()
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl << endl;
 
     //Variaveis
-    int qCompras, qInadimplencia;
+    int qCompras, qInadimplencia, sCompras = 0;
     double ticket;
     string formaPagamento;
 
@@ -25,6 +25,14 @@ int main()
     cin >> qInadimplencia;
     cout << "A maioria das compras foi em dinheiro, cartao, ou boleto (D/C/B)? ";
     cin >> formaPagamento;
+
+    //Score volume de compras
+    if(qCompras == 0) sCompras = 0;
+    else if(ticket <= 3000.0 && qCompras <= 2) sCompras = 20;
+    else if(ticket <= 3000.0 && qCompras > 2) sCompras = 40;
+    else sCompras = 60;
+
+    cout << endl << "Score de volume de compras = " << sCompras << " pontos" << endl;
 
     return 0;
 }

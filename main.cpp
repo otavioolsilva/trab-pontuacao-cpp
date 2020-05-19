@@ -10,7 +10,7 @@ int main()
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl << endl;
 
     //Variaveis
-    int qCompras, qInadimplencia, sCompras = 0, sInadimplencia = 0, sPagamento = 0;
+    int qCompras, qInadimplencia, sCompras = 0, sInadimplencia = 0, sPagamento = 0, sTotal = 0;
     double ticket;
     string formaPagamento;
 
@@ -45,6 +45,13 @@ int main()
 
     cout << endl << "Score de inadimplencia = " << sInadimplencia << " pontos" << endl;
     cout << "Score de forma de pagamento = " << sPagamento << " pontos" << endl;
+
+    //Classificacao final
+    sTotal = sCompras + sInadimplencia + sPagamento;
+
+    if(sTotal <= 25) cout << endl << "Classificacao final = CLIENTE BRONZE" << endl;
+    else if(sTotal <= 75) cout << endl << "Classificacao final = CLIENTE PRATA" << endl;
+    else cout << endl << "Classificacao final = CLIENTE OURO" << endl;
 
     return 0;
 }
